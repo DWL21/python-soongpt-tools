@@ -1,7 +1,6 @@
 import glob
 import json
 
-# 패턴에 맞는 모든 파일을 찾음
 for filename in glob.glob('result/2025_1/2025_1학기_*.json'):
     with open(filename, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -21,6 +20,5 @@ for filename in glob.glob('result/2025_1/2025_1학기_*.json'):
 
     process(data)
 
-    # 덮어쓰기
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

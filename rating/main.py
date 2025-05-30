@@ -1,9 +1,6 @@
 import json
-
 from departments import li
 import sorting
-
-
 def run(first, index):
     now = count + index + 1
     if first in sorting.direct_changed:
@@ -18,18 +15,10 @@ def run(first, index):
         "first": first,
         "departments": departments_value
     })
-
-
 count = 0
 results = []
 for index, first in enumerate(li[count:]):
     now = count + index + 1
     run(first, index)
-
-
-# JSON 파일로 저장
 with open('output.json', 'w', encoding='utf-8') as json_file:
     json.dump(results, json_file, ensure_ascii=False, indent=4)
-
-
-
